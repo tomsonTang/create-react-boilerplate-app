@@ -92,7 +92,7 @@ class init extends Basic {
       fileName: '*',
     });
     //只要js、jsx后缀的文件路径
-    var files = filesPath.filter((v, k) => {
+    var files = filesPath.filter(v => {
       if (v.indexOf('.js') !== -1) {
         return true;
       }
@@ -139,8 +139,8 @@ class init extends Basic {
     //end--进行了自定义标签处理
     this.writePackageJson();
     console.log();
-    var ac = require('./route-reducer-creater.js');
-    new ac();
+    require('./route.js')();
+    require('./reducer.js')();
     this.instruction();
   }
 
@@ -167,12 +167,11 @@ class init extends Basic {
     );
     console.log('    Creates a new page view template.');
     console.log();
-    console.log(
-      chalk.cyan(`  ${displayedCommand} create-route-reducer(ac for short)`)
-    );
-    console.log(
-      '    Creates routes and reducers base on the _route.js and reducer.js files.'
-    );
+    console.log(chalk.cyan(`  ${displayedCommand} route`));
+    console.log('    Creates routes base on the _route.js.');
+    console.log();
+    console.log(chalk.cyan(`  ${displayedCommand} reducer`));
+    console.log('    Creates reducers base on the reducer.js files.');
     console.log();
     console.log(
       chalk.cyan(`  ${displayedCommand} view-locale-to-excel(vlte for short)`)
