@@ -1,0 +1,13 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.5.1",
+    "bluebird": "^3.5.0",
+    "es6-promise": "^4.1.0",
+    "jest": "^20.0.4",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "scripts": {
+    "test": "jest ./my-test/__tests__/default.js"
+  }
+}
